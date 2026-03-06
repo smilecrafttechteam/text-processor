@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Tools</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <div class="app__header-row">
+          <div>
+            <h1>Text Tools</h1>
+            <p>Convert, clean, format, and encode text directly in your browser.</p>
+          </div>
+          <button id="themeToggleBtn" class="btn btn--ghost" type="button" aria-label="Toggle dark mode">
+            🌙 Dark Mode
+          </button>
+        </div>
+      </header>
+
+      <section class="panel panel--input">
+        <div class="panel__title-row">
+          <h2>Input</h2>
+          <button id="pasteInputBtn" class="btn btn--ghost" type="button">Paste Input</button>
+        </div>
+        <textarea
+          id="inputText"
+          class="text-area"
+          placeholder="Type or paste text here..."
+          spellcheck="false"
+        ></textarea>
+      </section>
+
+      <section class="tools-grid" aria-label="Text tools">
+        <article class="tool-group">
+          <h3>Case Conversion</h3>
+          <div class="tool-buttons">
+            <button class="btn" data-action="lowercase">lowercase</button>
+            <button class="btn" data-action="uppercase">UPPERCASE</button>
+            <button class="btn" data-action="sentenceCase">Sentence case</button>
+            <button class="btn" data-action="titleCase">Title Case</button>
+            <button class="btn" data-action="capitalizedCase">Capitalized Case</button>
+            <button class="btn" data-action="toggleCase">Toggle Case</button>
+            <button class="btn" data-action="camelCase">camelCase</button>
+            <button class="btn" data-action="pascalCase">PascalCase</button>
+            <button class="btn" data-action="snakeCase">snake_case</button>
+            <button class="btn" data-action="kebabCase">kebab-case</button>
+            <button class="btn" data-action="constantCase">CONSTANT_CASE</button>
+          </div>
+        </article>
+
+        <article class="tool-group">
+          <h3>Text Cleanup</h3>
+          <div class="tool-buttons">
+            <button class="btn" data-action="removeExtraSpaces">Remove Extra Spaces</button>
+            <button class="btn" data-action="trimLines">Trim Lines</button>
+            <button class="btn" data-action="removeEmptyLines">Remove Empty Lines</button>
+            <button class="btn" data-action="normalizeWhitespace">Normalize Whitespace</button>
+          </div>
+        </article>
+
+        <article class="tool-group">
+          <h3>Line Tools</h3>
+          <div class="tool-buttons">
+            <button class="btn" data-action="sortAZ">Sort Lines A-Z</button>
+            <button class="btn" data-action="sortZA">Sort Lines Z-A</button>
+            <button class="btn" data-action="reverseLines">Reverse Lines</button>
+            <button class="btn" data-action="removeDuplicateLines">Remove Duplicate Lines</button>
+            <button class="btn" data-action="numberLines">Number Lines</button>
+          </div>
+        </article>
+
+        <article class="tool-group">
+          <h3>Formatting</h3>
+          <div class="tool-buttons tool-buttons--with-inputs">
+            <label class="field">
+              Prefix
+              <input id="prefixInput" type="text" placeholder="e.g. - " />
+            </label>
+            <button class="btn" data-action="addPrefix">Add Prefix</button>
+            <label class="field">
+              Suffix
+              <input id="suffixInput" type="text" placeholder="e.g. ;" />
+            </label>
+            <button class="btn" data-action="addSuffix">Add Suffix</button>
+            <button class="btn" data-action="wrapQuotes">Wrap Lines in Quotes</button>
+          </div>
+        </article>
+
+        <article class="tool-group">
+          <h3>Encoding</h3>
+          <div class="tool-buttons">
+            <button class="btn" data-action="base64Encode">Base64 Encode</button>
+            <button class="btn" data-action="base64Decode">Base64 Decode</button>
+            <button class="btn" data-action="urlEncode">URL Encode</button>
+            <button class="btn" data-action="urlDecode">URL Decode</button>
+          </div>
+        </article>
+
+        <article class="tool-group">
+          <h3>Slug Generator</h3>
+          <div class="tool-buttons">
+            <button class="btn" data-action="slugify">Generate Slug</button>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel panel--output">
+        <div class="panel__title-row">
+          <h2>Output</h2>
+          <div class="panel__actions">
+            <button id="copyOutputBtn" class="btn btn--ghost" type="button">Copy Output</button>
+            <button id="downloadBtn" class="btn btn--ghost" type="button">Download TXT</button>
+            <button id="clearBtn" class="btn btn--ghost" type="button">Clear Text</button>
+          </div>
+        </div>
+        <textarea
+          id="outputText"
+          class="text-area"
+          placeholder="Transformed text will appear here..."
+          spellcheck="false"
+        ></textarea>
+      </section>
+
+      <section class="stats" aria-live="polite">
+        <span id="charCount">Characters: 0</span>
+        <span id="wordCount">Words: 0</span>
+        <span id="lineCount">Lines: 0</span>
+        <span id="readTime">Reading Time: 0 min</span>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
