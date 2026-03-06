@@ -57,44 +57,25 @@ Text Tools is a frontend-only web application for converting, formatting, cleani
 3. Click any tool button to transform text.
 4. View/edit the result in the output area and copy/download as needed.
 
-## GitHub Pages setup (recommended for this repo)
+## Deploy to GitHub Pages
 
-This repository keeps the app under `text-tools/`, so the included workflow deploys that folder directly to GitHub Pages.
+### Option A: Deploy root of a repository
 
-### 1) Push these files to GitHub
+1. Push the `text-tools` folder contents to your repository root (or keep this folder and configure accordingly).
+2. In GitHub, open **Settings → Pages**.
+3. Under **Build and deployment**, select:
+   - **Source**: `Deploy from a branch`
+   - **Branch**: `main` (or your default branch)
+   - **Folder**: `/ (root)` if files are at root, or `/docs` if you place files in `docs`.
+4. Save and wait for deployment.
+5. Open the published URL shown in GitHub Pages settings.
 
-Make sure your repo includes:
+### Option B: Deploy from `/docs`
 
-- `text-tools/` (app files)
-- `.github/workflows/deploy-pages.yml` (deployment workflow)
-
-### 2) Enable GitHub Pages to use Actions
-
-In your GitHub repository:
-
-1. Go to **Settings → Pages**.
-2. Under **Build and deployment**:
-   - **Source**: `GitHub Actions`
-
-### 3) Trigger deployment
-
-- Push to `main` (deployment runs automatically), **or**
-- Go to **Actions → Deploy Text Tools to GitHub Pages → Run workflow**.
-
-### 4) Open your site
-
-After deployment finishes, your app will be available at:
-
-- `https://<your-username>.github.io/<your-repo-name>/`
-
-GitHub also shows the exact URL in:
-
-- **Settings → Pages**
-- Workflow run summary (`deploy-pages` step output)
-
-## Optional: Deploy without Actions
-
-If you prefer the branch/folder method, copy `text-tools/*` into repository root or `docs/` and configure Pages to deploy from that location.
+1. Copy these files into a `docs/` directory in your repo.
+2. Commit and push.
+3. In **Settings → Pages**, set source to your branch and folder to `/docs`.
+4. Save and open the generated Pages URL.
 
 ## Project structure
 
